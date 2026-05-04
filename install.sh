@@ -22,13 +22,15 @@ cd "$HOME/.wine/drive_c/Program Files (x86)/Synthesia/"
 exec wine "$HOME/.wine/drive_c/Program Files (x86)/Synthesia/Synthesia.exe" "$@"
 EOF
 
+cp $HOME/synthesia-installer-linux/synthesia.png $HOME/.local/share
+
 mkdir -p ~/.local/share/applications/
 cat << EOF > $HOME/.local/share/applications/
 [Desktop Entry]
 Name=Synthesia
 Comment=Piano learning game
 Exec=synthesia
-Icon=$HOME/synthesia-installer-linux/synthesia.png
+Icon=$HOME/.local/share/synthesia.png
 Type=Application
 Categories=Game;Music;Education;
 StartupWMClass=synthesia.exe
