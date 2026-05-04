@@ -22,8 +22,8 @@ chmod +x $HOME/.local/bin/synthesia
 mkdir -p ~/.local/share/icons/
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cp "$SCRIPT_DIR/synthesia.png" "$HOME/.local/share/icons/synthesia.png"
-mkdir -p ~/.local/share/applications/synthesia.desktop
-cat <<EOF >$HOME/.local/share/applications/
+mkdir -p ~/.local/share/applications/
+cat <<EOF >$HOME/.local/share/applications/synthesia.desktop
 [Desktop Entry]
 Name=Synthesia
 Comment=Piano learning game
