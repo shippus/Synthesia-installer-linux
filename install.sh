@@ -7,7 +7,10 @@ read -p "Press Enter once the installation has succeeded"
 
 # Create the .desktop
 mkdir -p $HOME/.local/bin/
-export PATH="$HOME/.local/bin:$PATH"
+# Persist ~/.local/bin in PATH if not already there
+if ! grep -q '.local/bin' "$HOME/.bashrc"; then
+  echo 'export PATH="$HOME/.local/bin:$PATH"' >>"$HOME/.bashrc"
+fi
 cat <<EOF >$HOME/.local/bin/synthesia
 #!/bin/bash
 zenity --info --text="Opening Synthesia with Wine."
